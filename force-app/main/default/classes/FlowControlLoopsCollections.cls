@@ -14,7 +14,7 @@
 * in flow control, loops, and collections. By mastering these concepts, developers will be able to write more
 * efficient and effective code in their Salesforce projects.
 *
-* @author Your Name
+* @author Shery Jacob
 */
 
 public with sharing class FlowControlLoopsCollections {
@@ -29,7 +29,15 @@ public with sharing class FlowControlLoopsCollections {
      * @return "Hello World!" if x greater than y, otherwise return null.
      */
     public static String helloWorld(Integer x, Integer y) {
-        return null; // Replace null with the variable you used to store the result
+        if(x == null || y == null || x < y || x == y)
+        {
+            return null;
+        }
+        else 
+        {
+            return 'Hello World!';
+        }
+       // Replace null with the variable you used to store the result
     }
 
     /**
@@ -42,7 +50,14 @@ public with sharing class FlowControlLoopsCollections {
      * @return true if the person is eligible to vote, false otherwise.
      */
     public static Boolean votingEligibility(Integer age) {
-        return null; // Replace null with the variable you used to store the result
+        if(age == 18 || age > 18)
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        } // Replace null with the variable you used to store the result
     }
 
     /**
@@ -57,8 +72,19 @@ public with sharing class FlowControlLoopsCollections {
     public static Integer findMax(Integer num1, Integer num2) {
         // Initialize largestNum as null
         Integer largestNum = null;
-
-        return null; // Replace null with the variable you used to store the result
+        if(num1 > num2)
+        {
+           return num1; 
+        }
+        else if(num1 < num2 || num1 == num2)
+        { 
+            return num2;
+        }
+        else
+        {
+            return null;
+        }
+         // Replace null with the variable you used to store the result
     }
 
 
@@ -71,7 +97,22 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Positive", "Negative", or "Zero", or null if the number is null.
      */
     public static String checkNumber(Integer a) {
-        return null; // Replace null with the variable you used to store the result
+        if(a > 0)
+        {
+           return 'Positive'; 
+        }
+        else if(a < 0)
+        { 
+            return 'Negative';
+        }
+        else if(a == 0)
+        {
+            return 'Zero';
+        }
+        else 
+        {
+           return null; 
+        } // Replace null with the variable you used to store the result
     }
 
     /**
@@ -83,7 +124,18 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Even" or "Odd", or null if the number is null.
      */
     public static String checkEvenOdd(Integer a) {
-        return null; // Replace null with the variable you used to store the result
+        if(a == null)
+        {
+           return null; 
+        }
+        else if(math.mod(a,2) == 0)
+        { 
+            return 'Even';
+        }
+        else
+        {
+           return 'Odd'; 
+        } // Replace null with the variable you used to store the result
     }
 
     /**
@@ -94,7 +146,18 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the input is "Empty", "Null", or "Contains Text".
      */
     public static String checkString(String a) {
-        return null; // Replace null with the variable you used to store the result
+        if(a == '')
+        {
+           return 'Empty'; 
+        }
+        else if(a == null)
+        { 
+            return 'Null';
+        }
+        else
+        {
+           return 'Contains Text'; 
+        }  // Replace null with the variable you used to store the result
     }
 
     /**
@@ -110,7 +173,26 @@ public with sharing class FlowControlLoopsCollections {
      * @return The grade for the given score.
      */
     public static String determineGrade(Integer score) {
-        return null; // Replace null with the variable you used to store the result
+        if(score > 90 || score == 90)
+        {
+           return 'A'; 
+        }
+        else if(score >= 80)
+        { 
+            return 'B';
+        }
+        else if(score >= 70)
+        { 
+            return 'C';
+        }
+        else if(score >= 60)
+        { 
+            return 'D';
+        }
+        else
+        {
+           return 'F'; 
+        }  // Replace null with the variable you used to store the result
     }
 
 
@@ -122,13 +204,12 @@ public with sharing class FlowControlLoopsCollections {
      * @return The sum of all integers up to the limit.
      */
     public static Integer sumUpToLimit(Integer intLimit) {
-        /* 
-         for (){
-            
-         }
-        */
-
-        return null; // Replace null with the variable you used to store the result
+        Integer sum = 0;
+        for(Integer i = 1; i <= intLimit; i++)
+        {
+          sum = sum + i;
+        }
+        return sum;
     }
 
     /**
@@ -138,16 +219,13 @@ public with sharing class FlowControlLoopsCollections {
      * @return The string "Hello World!; Hello World!; Hello World!; "
      */
     public static String returnHelloWorld() {
-        // Initialize the result String
-
-        // Use a for loop to append 'Hello World!;' to the result string three times
-        /* 
-         for (){
-            
-         }
-        */
-
-        return null; // Replace null with the variable you used to store the result
+        String myResult = '';
+       for(Integer i = 1; i <= 3; i++)
+        {
+          myResult += 'Hello World!';
+          myResult += '; ';
+        }
+        return myResult; 
     }
 
     /**
@@ -161,18 +239,16 @@ public with sharing class FlowControlLoopsCollections {
      * @return The new string with the inputString repeated repeatCount times.
      */
     public static String repeatString(String inputString, Integer repeatCount) {
-        // Initialize the result String
-
-        // Use a for loop to append the inputString to the result string repeatCount times
-        /*
-        for () {
-
-            // If it is not the last iteration, add a semicolon to separate the strings
+        String result= '';
+       for(Integer i = 1; i <= repeatCount; i++)
+        {
+            result += inputString;
+            if(i < repeatCount)
+          {
+            result += '; ';
+           }
         }
-        */
-
-        // Return the final result string
-        return null; // Replace null with the variable you used to store the result
+        return result;
     }
 
     /**
